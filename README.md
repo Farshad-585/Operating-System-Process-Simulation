@@ -1,15 +1,14 @@
 # Operating-System-Process-Simulation
 ---
-
 ### CITS2002 - Systems Programming
 #### The University of Western Australia
 
-#### Project goals
 ---
+#### Project goals
 This project helped me understand some advanced features of the C99 programming language, and how an operating system can manage processes and inter-process communication.
 
-#### Description
 ---
+#### Description
 UNIX-based operating systems employ pre-emptive process scheduling policies to execute hundreds of processes 'simultaneously' on a single CPU. Process take turns to execute on the CPU until they explictly exit, perform an operation that would block (stall) their execution, or until their rationed time on the CPU has elapsed. Only a single process may be 'on' the CPU at one time, and this process is uniquely marked as bing in the Running state. All processes are uniquely identified by a positive integer value termed a process-identifier, or PID. When a UNIX-based operating system has finished booting, only a single process exists (with PID=1) and is executing on the CPU. Like all (future) processes, this initial process may use the CPU to perform some computation or request actions of the operating system kernel by making system-calls.
 
 The processes simulated in this project may only perform a limited number of system-calls, and may only make their system-calls when executing on the CPU. These are described here, along with reference to the possible execution states of the processes.
@@ -33,9 +32,8 @@ A process attempting to write more data than will fit in the pipe will write som
 A process attempting to read from an empty pipe will block until some bytes are available in the pipe. A reading process will remain blocked until all of its readpipe() request has been read from the pipe after which it will be marked as Ready again.
 
 Note: the implementation and operation of pipes required for this project was slightly different, and much simpler, than 'true' pipes in a UNIX-based operating system.
-
-#### Event Files
 ---
+#### Event Files
 An eventfile is a simple text file containing the historic record of the system-calls requested by the processes of a simple computer system. After the computer system has booted, only a single process (with PID=1) will be running. Thus the first line of every eventfile is a system-call request by PID=1, and no other processes will appear until that first process performs a fork(). The very last line of an eventfile will record the last exit() call, after which no processes will be running (and the system halts). Each line of the file consists of a number of white-space separated words. The first word is always a positive PID, indicating which process is performing the action described on the remainder of the line. The second word on each line is always the name of a system-call requested by the process. Some lines will also have one or two additional words which further describe input paramete(s) for the system-call, or the value returned by the system-call. The supported system-calls are:
 
   - compute() microseconds-required-on-CPU
@@ -49,5 +47,5 @@ An eventfile is a simple text file containing the historic record of the system-
 
 Starting code was provided so that we could parse the information in the eventfiles. Then we stored this information in our own data structres and varaibles before we commenced the simulation.
 
-***
-##### NOTE: THIS PROJECT WAS PART OF THE SYSTEMS PROGRAMMING UNIT(CITS2002) AT THE UNIVERSITY OF WESTERN AUSTRALIA. SOME OF THE CODE AND LOGIC WAS PROVIDED BY PROFESSOR CHRIS MCDONALD. 
+---
+NOTE: THIS PROJECT WAS PART OF THE SYSTEMS PROGRAMMING UNIT(CITS2002) AT THE UNIVERSITY OF WESTERN AUSTRALIA. SOME OF THE CODE AND LOGIC WAS PROVIDED BY PROFESSOR CHRIS MCDONALD. 

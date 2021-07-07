@@ -32,6 +32,7 @@ A process attempting to write more data than will fit in the pipe will write som
 A process attempting to read from an empty pipe will block until some bytes are available in the pipe. A reading process will remain blocked until all of its readpipe() request has been read from the pipe after which it will be marked as Ready again.
 
 Note: the implementation and operation of pipes required for this project was slightly different, and much simpler, than 'true' pipes in a UNIX-based operating system.
+
 ---
 #### Event Files
 An eventfile is a simple text file containing the historic record of the system-calls requested by the processes of a simple computer system. After the computer system has booted, only a single process (with PID=1) will be running. Thus the first line of every eventfile is a system-call request by PID=1, and no other processes will appear until that first process performs a fork(). The very last line of an eventfile will record the last exit() call, after which no processes will be running (and the system halts). Each line of the file consists of a number of white-space separated words. The first word is always a positive PID, indicating which process is performing the action described on the remainder of the line. The second word on each line is always the name of a system-call requested by the process. Some lines will also have one or two additional words which further describe input paramete(s) for the system-call, or the value returned by the system-call. The supported system-calls are:

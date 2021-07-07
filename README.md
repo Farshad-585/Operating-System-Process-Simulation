@@ -1,4 +1,4 @@
-# Operating-System-Process-Simulation
+# Operating System Process Simulation
 ---
 ### CITS2002 - Systems Programming
 #### The University of Western Australia

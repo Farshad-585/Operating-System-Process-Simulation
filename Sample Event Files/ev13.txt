@@ -1,0 +1,10 @@
+1       pipe            1
+1       fork            2
+1       writepipe       1       3000
+2       readpipe        1       4000
+2       readpipe        1       4000
+1       writepipe       1       4000
+2       readpipe        1       2000
+1       writepipe       1       3000
+1       exit
+2       exit

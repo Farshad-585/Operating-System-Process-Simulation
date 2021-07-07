@@ -1,0 +1,11 @@
+#
+# The initial process sleeps, computes, sleeps, computes, and then exits
+# SEE ALSO - the Clarification made on Sept 1st
+#
+1       compute   	3200
+1       sleep   	3200
+1       sleep   	4330
+1       exit
+#
+
+# timetaken 10805

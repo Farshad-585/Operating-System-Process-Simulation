@@ -1,0 +1,9 @@
+1 fork 2
+1 wait 2
+2 sleep 200
+1 compute 1555
+2 compute 1300
+1 exit
+2 exit
+
+# 3145
